@@ -17,7 +17,8 @@ function App() {
             title="Is an arrow functional component with props" />
         <ArrowFunctionalComponentWithPropsType
             title="Is an arrow functional component with props"
-            description="This is a description"/>
+            description="This is a description"
+        />
       {/*<ViteIntro />*/}
     </>
   )
