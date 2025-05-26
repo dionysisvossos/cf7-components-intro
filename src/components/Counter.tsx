@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import CounterButton from "./CounterButton.tsx";
 
-const FunctionalComponentWithState = () => {
+const Counter = () => {
     const [ count, setCount ] = useState(0);
 
     const increaseCount = () => {
@@ -35,4 +35,4 @@ const FunctionalComponentWithState = () => {
     )
 }
 
-export default FunctionalComponentWithState;
+export default Counter;
