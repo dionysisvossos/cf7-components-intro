@@ -6,9 +6,16 @@ const NameChanger = () => {
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setName(e.target.value);
 
+    // const setup = () => {
+    //     document.title = name ? `Hello, ${name}!` :  "Hello Stranger";
+    // }
+    // useEffect(setup, [name]);
+
         useEffect(() => {
             document.title = name ? `Hello, ${name}!` :  "Hello Stranger";
         }, [name]);
+
+
     }
 
     return (
