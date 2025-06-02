@@ -1,4 +1,4 @@
-import { useReducer } from 'react';
+import {useReducer} from 'react';
 import TodoForm from "./TodoForm.tsx";
 import TodoList from "./TodoList.tsx";
 
