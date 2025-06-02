@@ -13,12 +13,19 @@ import Layout from "./components/Layout.tsx";
 // import FunctionalComponentWithState from "./components/FunctionalComponentWithState.tsx";
 // import Counter from "./components/Counter.tsx";
 import NameChanger from "./components/NameChanger.tsx";
+import {useEffect} from "react";
 // import ClassComponentWithState from "./components/ClassComponentWithState.tsx";
 // import CounterWithMoreStates from "./components/CounterWithMoreStates.tsx";
 // import Todo from "../../cf7-react-todo-app/src/components/Todo.tsx";
 
 
 function App() {
+
+    useEffect(() => {
+        const id: number = setInterval(() => console.log("tick"), 1000);
+        return () =>
+            clearInterval(id);
+    }, []);
 
   return (
     <>
