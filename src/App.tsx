@@ -14,10 +14,13 @@ import Layout from "./components/Layout.tsx";
 // import Counter from "./components/Counter.tsx";
 // import NameChanger from "./components/NameChanger.tsx";
 // import {useEffect} from "react";
-import OnlineStatus from "./components/OnlineStatus.tsx";
+// import OnlineStatus from "./components/OnlineStatus.tsx";
 // import ClassComponentWithState from "./components/ClassComponentWithState.tsx";
 // import CounterWithMoreStates from "./components/CounterWithMoreStates.tsx";
 // import Todo from "../../cf7-react-todo-app/src/components/Todo.tsx";
+import {BrowserRouter, Routes, Route} from "react-router";
+import HomePage from "./pages/HomePage";
+import NameChangerPage from "./pages/NameChangerPage.tsx";
 
 
 function App() {
@@ -30,7 +33,7 @@ function App() {
 
   return (
     <>
-        <Layout>
+        {/*<Layout>*/}
         {/*  <ClassComponent />*/}
         {/*  <FunctionalComponent />*/}
         {/*  <ArrowFunctionalComponent />*/}
@@ -51,8 +54,18 @@ function App() {
         {/*<CounterAdvancedWithCustomHook/>*/}
         {/*<CounterWithReducer/>*/}
         {/*<Todo/>*/}
-        <OnlineStatus/>
-        </Layout>
+        {/*<OnlineStatus/>*/}
+        {/*</Layout>*/}
+
+        <BrowserRouter>
+            <Layout>
+                {/*<OnlineStatus/>*/}
+            <Routes>
+                <Route path="/" element={<HomePage />}/>
+                <Route path="name-changer" element={<NameChangerPage />}/>
+            </Routes>
+            </Layout>
+        </BrowserRouter>
     </>
   )
 }
