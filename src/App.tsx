@@ -5,7 +5,7 @@
 // import ArrowFunctionalComponent from "./components/ArrowFunctionalComponent.tsx";
 // import ArrowFunctionalComponentWithProps from "./components/ArrowFunctionalComponentWithProps.tsx";
 // import ArrowFunctionalComponentWithPropsType from "./components/ArrowFunctionalComponentWithPropsType.tsx";
-import Layout from "./components/Layout.tsx";
+// import Layout from "./components/Layout.tsx";
 // import CounterWithReducer from "./components/CounterWithReducer.tsx";
 // import CounterAdvanced from "./components/CounterAdvanced.tsx";
 // import CounterWithCustomHook from "./components/CounterWithCustomHook.tsx";
@@ -23,6 +23,7 @@ import HomePage from "./pages/HomePage";
 import NameChangerPage from "./pages/NameChangerPage.tsx";
 import OnlineStatusPage from "./pages/OnlineStatusPage.tsx";
 import UserPage from "./pages/UserPage";
+import RouterLayout from "./components/RouterLayout.tsx";
 
 
 
@@ -61,9 +62,12 @@ function App() {
         {/*</Layout>*/}
 
         <BrowserRouter>
-            <Layout>
+            {/*<Layout>*/}
             <Routes>
-                <Route index element={<HomePage />}/>
+                <Route element={<RouterLayout />} >
+                    <Route index element={<HomePage />}/>
+                </Route>
+
 
                 {/*<Route path="example/name-changer" element={<NameChangerPage />}/>*/}
                 {/*<Route path="example/online-status" element={<NameChangerPage />}/>*/}
@@ -73,9 +77,10 @@ function App() {
                     <Route path="online-status" element={<OnlineStatusPage />} />
                 </Route>
                 <Route path="users/:userId" element={<UserPage />}/>
-
+                <Route path="users" element={<UserPage />}/>
+                {/*<Route path="files/*" element={<FilePage />}/>*/}
             </Routes>
-            </Layout>
+            {/*</Layout>*/}
         </BrowserRouter>
     </>
   )
