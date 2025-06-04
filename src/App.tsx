@@ -21,6 +21,9 @@ import Layout from "./components/Layout.tsx";
 import {BrowserRouter, Routes, Route} from "react-router";
 import HomePage from "./pages/HomePage";
 import NameChangerPage from "./pages/NameChangerPage.tsx";
+import OnlineStatusPage from "./pages/OnlineStatusPage.tsx";
+import UserPage from "./pages/UserPage";
+
 
 
 function App() {
@@ -59,10 +62,18 @@ function App() {
 
         <BrowserRouter>
             <Layout>
-                {/*<OnlineStatus/>*/}
             <Routes>
-                <Route path="/" element={<HomePage />}/>
-                <Route path="name-changer" element={<NameChangerPage />}/>
+                <Route index element={<HomePage />}/>
+
+                {/*<Route path="example/name-changer" element={<NameChangerPage />}/>*/}
+                {/*<Route path="example/online-status" element={<NameChangerPage />}/>*/}
+
+                <Route path="examples?">
+                    <Route path="name-changer" element={<NameChangerPage />} />
+                    <Route path="online-status" element={<OnlineStatusPage />} />
+                </Route>
+                <Route path="users/:userId" element={<UserPage />}/>
+
             </Routes>
             </Layout>
         </BrowserRouter>
