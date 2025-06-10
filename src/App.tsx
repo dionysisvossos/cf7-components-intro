@@ -26,6 +26,8 @@ import UserPage from "./pages/UserPage";
 import RouterLayout from "./components/RouterLayout.tsx";
 import ExamplesPage from "./pages/ExamplesPage.tsx";
 import RouterExamplesLayout from "./components/RouterExamplesLayout.tsx";
+import AutoRedirectPage from "./pages/AutoRedirectPage.tsx";
+import NotFoundPage from "./pages/NotFoundPage.tsx";
 
 
 
@@ -78,14 +80,13 @@ function App() {
                     <Route index element={<ExamplesPage/>}/>
                     <Route path="name-changer" element={<NameChangerPage/>}/>
                     <Route path="online-status" element={<OnlineStatusPage/>}/>
+                    <Route path="auto-redirect" element={<AutoRedirectPage/>}/>
                 </Route>
 
                 <Route path="users/:userId" element={<UserPage />}/>
                 <Route path="users" element={<UserPage />}/>
                 {/*<Route path="files/*" element={<FilePage/>}/>*/}
-                PATH: https://example.com/users/125/name/nick
-                QUERY: https://example.com/users?id=125&name=Nick
-                https://www.skroutz.gr/c/3074/pagomixanes/f/891854_891908_1066530/trima-epagelmatiki-101-200.html?price_max=3200.0&price_min=1400.001
+                <Route path="*" element={<NotFoundPage/>}/>
             </Routes>
         </BrowserRouter>
 
